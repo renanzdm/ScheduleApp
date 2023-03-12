@@ -1,6 +1,8 @@
 package com.example.scheduleapp.presenter.splash
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.runtime.*
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -21,10 +23,8 @@ fun SplashPage(
         }
     }
     if (uiState.isLoading) {
-        Box {
-//            Column (modifier = Modifier.align(Alignment.Center)){
+        Column(verticalArrangement = Arrangement.Center) {
             CircularProgressIndicator()
-//            }
         }
     }
     

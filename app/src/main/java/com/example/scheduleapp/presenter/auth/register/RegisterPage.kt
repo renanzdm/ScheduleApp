@@ -30,7 +30,6 @@ fun RegisterPage() {
         OutlinedTextField(value = nameField, onValueChange = { value -> })
         OutlinedTextField(value = emailField, onValueChange = { value -> })
         OutlinedTextField(value = passwordField, onValueChange = { value -> })
-        AppButton(text = "ENTRAR", color = Color.Cyan, onClick = {})
         
         
        

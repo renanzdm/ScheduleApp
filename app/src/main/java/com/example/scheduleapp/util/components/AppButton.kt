@@ -1,9 +1,7 @@
 package com.example.scheduleapp.util.components
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
@@ -15,18 +13,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun AppButtonGradient(text:String,gradient: Brush,onClick:()->Unit) {
+fun AppButtonGradient(text:String,gradient: Brush,onClick:()->Unit,modifier: Modifier) {
   
     Button(
         colors = ButtonDefaults.buttonColors(
-            backgroundColor = Color.Transparent
+            backgroundColor = Color.Transparent,
         ),
-        onClick = onClick)
+        onClick = onClick,modifier = modifier)
     {
         Box(
-            modifier = Modifier
-                .background(gradient)
-                .padding(horizontal = 16.dp, vertical = 8.dp),
+            modifier = modifier.background(gradient),
             contentAlignment = Alignment.Center
         ) {
             Text(text = text)
@@ -35,12 +31,12 @@ fun AppButtonGradient(text:String,gradient: Brush,onClick:()->Unit) {
 }
 
 @Composable
-fun AppButton(text:String,color:Color,onClick:()->Unit) {
+fun AppButton(text:String,color:Color,onClick:()->Unit,modifier: Modifier = Modifier) {
     Button(
         colors = ButtonDefaults.buttonColors(
             backgroundColor = color
         ),
-        onClick = onClick, modifier = Modifier.fillMaxWidth())
+        onClick = onClick, modifier = modifier)
     {
         Text(text = text)
         
